@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyHub — Tableau de bord</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header>
+    <a href="dashboard.html" class="logout-link"><div class="logo">Study<span>Hub</span></div></a>
+    <div class="header-right">
+      <a href="profil.html" class="logout-link"> <div class="user-pill">
+        <div class="avatar" id="user-avatar">AA</div>
+        <a href="profil.html" class="logout-link"><span class="user-name" id="user-name">Ahmed Aouali</span></a>
+        <span class="user-role" id="user-role"></span>
+      </div></a>
+      <span id="logout" class="logout-link">Déconnexion →</span>
+    </div>
+  </header>
+
+  <!-- ─── MAIN ─── -->
+  <main>
+
+    <!-- Greeting -->
+    <div class="greeting">
+      <div class="greeting-tag">Tableau de bord</div>
+      <h1>Bonjour, <em id="greeting-name">Ahmed.</em></h1>
+      <p>Accède aux documents de ta filière — examens, TDs, TPs et DSs classés par matière et semestre.</p>
+    </div>
+
+    <!-- Document type cards -->
+    <p class="section-label">Choisir un type de document</p>
+
+    <div class="cards-grid">
+
+      <!-- TD -->
+      <a href="td.html" class="doc-card card-td">
+        <div class="glow"></div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--td)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <span class="card-badge">TD</span>
+        <div class="card-title">Travaux Dirigés</div>
+        <p class="card-desc">Exercices et corrigés des séances dirigées par matière et semestre.</p>
+        <div class="card-arrow">
+          <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 6h8M6 2l4 4-4 4"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- TP -->
+      <a href="tp.html" class="doc-card card-tp">
+        <div class="glow"></div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--tp)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+          </svg>
+        </div>
+        <span class="card-badge">TP</span>
+        <div class="card-title">Travaux Pratiques</div>
+        <p class="card-desc">Rapports et sujets de TP — mettez en pratique vos compétences.</p>
+        <div class="card-arrow">
+          <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 6h8M6 2l4 4-4 4"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- DS -->
+      <a href="ds.html" class="doc-card card-ds">
+        <div class="glow"></div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--ds)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <span class="card-badge">DS</span>
+        <div class="card-title">Devoirs Surveillés</div>
+        <p class="card-desc">Anciens DS avec corrections — entraîne-toi dans les conditions réelles.</p>
+        <div class="card-arrow">
+          <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 6h8M6 2l4 4-4 4"/>
+          </svg>
+        </div>
+      </a>
+
+      <!-- EXAMEN -->
+      <a href="examens.html" class="doc-card card-ex">
+        <div class="glow"></div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--ex)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <span class="card-badge">Examen</span>
+        <div class="card-title">Examens Finaux</div>
+        <p class="card-desc">Sujets des examens de fin de semestre avec corrigés disponibles.</p>
+        <div class="card-arrow">
+          <svg viewBox="0 0 12 12" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 6h8M6 2l4 4-4 4"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Info row -->
+    <div class="info-row">
+      <div class="info-card">
+        <div class="info-dot" style="background:var(--accent)"></div>
+        <div class="info-text">
+          <p>Filière</p>
+          <strong id="info-filiere">Informatique — L2</strong>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-dot" style="background:var(--tp)"></div>
+        <div class="info-text">
+          <p>Semestre actuel</p>
+          <strong id="info-semestre">Semestre 4</strong>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-dot" style="background:var(--td)"></div>
+        <div class="info-text">
+          <p>Documents disponibles</p>
+          <strong id="info-docs">148 fichiers</strong>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    © 2026 StudyHub &nbsp;·&nbsp; Projet étudiant ISTIC
+  </footer>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive; /* ou une police comme Pacifico */
+    font-size: 30px;
+    font-weight:30px ;
+    color: #2bb3b3; 
+    text-align: center;
+    
+    transform: skewX(-10deg);
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+header a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* BODY */
+body {
+    background: linear-gradient(135deg, #3498db, #2bb3b3);
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+/* FORM */
+.form-box {
+    width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* TITLE */
+.form-box h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* INPUT */
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* LABEL */
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    color: #999;
+    transition: 0.3s;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 12px;
+    color: #3498db;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.moi{
+    color: #2bb3b3;
+    width: 10px;
+    height: 10px;
+}
+.btn:hover {
+    background: #2c80b4;
+    transform: scale(1.05);
+}
+
+/* LINK */
+.login-link,.forgot-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-link a,.forgot-link a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.login-link a:hover,.forgot-link a:hover {
+    text-decoration: underline;
+}
+.input-group , label {
+    margin-right: 15px;
+    cursor: auto;
+}
+
+.bar a:hover{
+    font-size: larger;
+}
+.erreur{
+    color: red;
+}

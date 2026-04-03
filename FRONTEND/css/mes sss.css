@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.moi{
+    color: #2bb3b3;
+    width: 10px;
+    height: 10px;
+}
+
+.tit{
+    font-family: 'Great Vibes', cursive; /* ou une police comme Pacifico */
+    font-size: 30px;
+    font-weight:30px ;
+    color: #2bb3b3; 
+    text-align: center;
+    
+    transform: skewX(-10deg);
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.special{
+    color: gray;
+}
+img{
+    position: static;
+     max-width: 200px;
+    
+    margin: 20px auto 10px auto;
+    margin-left: 800px;
+} 
+
+/* Header */
+header {
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+header a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #3498db, #2bb3b3);
+    color: white;
+    padding: 40px 20px;
+    display: inline-block;
+    width: 100%;
+
+}
+
+.hero button {
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    color:  #2c3e50;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-left: 500px;
+}
+.hero button:hover {
+    color: #00e6e6;
+    
+  transform: scale(1.1);
+}
+
+
+/* Features */
+.features {
+    padding: 20px;
+    text-align: center;
+}
+
+.cards {
+    display: block;
+   
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+.card {
+    background: #ecf0f1;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+}
+h3{
+    font-family: 'Great Vibes', cursive;;
+}
+/* Steps */
+.steps {
+    background-image: url("etudient.PNG"); /* chemin de ton image */
+    background-size: contain;       /* couvre toute la section */
+    background-position: center;  /* centre l’image */
+    background-repeat: no-repeat;
+    color: black; /* texte visible sur image */
+    padding: 80px 20px;
+    text-align: center;
+}
+.bt{
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    color: #2c3e50;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+.bt:hover{
+    color: #00e6e6;
+    transform: scale(1.1);
+    
+}
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.bar a:hover{
+    font-size: larger;
+}

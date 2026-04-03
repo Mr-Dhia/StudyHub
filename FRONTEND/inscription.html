@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - StudyHub</title>
+    <link rel="stylesheet" href="css/styleins.css">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">StudyHub</h1>
+    <nav class="bar">
+        <a href="index.html">Accueil</a>
+        <a href="connexion.html" >Connexion</a>
+        <a href="inscription.html" class="moi">Inscription</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="form-box">
+        <h2>Créer un compte</h2>
+
+        <form id="myform">
+
+            <div class="input-box">
+                <input type="text" id="nom" placeholder=" " required>
+                <label for="nom">Nom complet</label>
+            </div>
+            <span class="erreur" id="ernom"></span>
+
+            <div class="input-box">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+               
+            </div>
+             <span class="erreur" id="eremail"></span>
+
+            <div class="input-box">
+                <input type="text" id="id" placeholder=" " required>
+                <label for="id">Identifiant</label>
+                
+            </div>
+            <span class="erreur" id="erid"></span>
+
+            <!-- FILIERE -->
+            <div class="input-group">
+                <span>Filière :</span>
+                <select name="section" id="filiere">
+                    <option value="">Choisir une filière</option>
+                    <option>LISI</option>
+                    <option>IOT</option>
+                    <option>RS</option>
+                    <option>LT</option>
+                </select>
+                
+            </div>
+            <span class="erreur" id="erfil"></span>
+
+            <!-- CLASSE -->
+            <div class="input-group">
+                <span>Classe :</span>
+                <label><input type="radio" name="classe" value="1" id="rd"> 1ère</label>
+                <label><input type="radio" name="classe" value="2" id="rd"> 2ème</label>
+                <label><input type="radio" name="classe" value="3" id="rd"> 3ème</label>
+                
+            </div>
+            <span class="erreur" id="erclasse"></span>
+
+            <div class="input-box">
+                <input type="password" id="password" placeholder=" " required>
+                <label for="password">Mot de passe</label>
+                
+            </div>
+            <span class="erreur" id="ermdp"></span>
+
+            <div class="input-box">
+                <input type="password" id="confirm" placeholder=" " required>
+                <label for="confirm">Confirmer mot de passe</label>
+                
+            </div>
+            <span class="erreur" id="ercmdp"></span>
+
+            <button type="submit" class="btn">S'inscrire</button>
+
+            <span class="login-link">
+                Déjà un compte ? <a href="connexion.html">Se connecter</a>
+            </span>
+
+        </form>
+    </div>
+</div>
+<script src="js/insc.js"></script>
+</body>
+</html>
