@@ -16,6 +16,8 @@ const SECRET = process.env.SECRET;
 
 
 
+
+
 // stockage codes
 const codes = {};
 
@@ -28,7 +30,7 @@ setInterval(() => {
             delete codes[email];
         }
     }
-}, 5*60 * 1000);
+}, 5 * 60 * 1000);
 
 // REGISTER
 router.post("/register", async (req, res) => {
@@ -89,12 +91,18 @@ router.post("/login", loginLimiter, async (req, res) => {
             SECRET,
             { expiresIn: "1h" }
         );
-
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: false,
+            sameSite: "lax",
+            maxAge: 60 * 60 * 1000,
+            path: "/"
+        });
         const code = generateCode();
 
         codes[email] = {
             code,
-            expiresAt: Date.now() +  3*60 * 1000
+            expiresAt: Date.now() + 3 * 60 * 1000
         };
 
         if (user.role === "admin") {
@@ -106,21 +114,19 @@ router.post("/login", loginLimiter, async (req, res) => {
                 text: "Votre code est : " + code
             });
 
-            return res.send({
+            return res.json({
                 status: "CODE_SENT",
-                token,
                 role: user.role
             });
         }
         await transporter.sendMail({
-                from: '"StudyHub" <' + process.env.EMAIL_USER + '>',
-                to: email,
-                subject: "Nouvelle connexion",
-                text: "Connexion de votre compte etudiant" + process.env.EMAIL_USER
-            });
+            from: '"StudyHub" <' + process.env.EMAIL_USER + '>',
+            to: email,
+            subject: "Nouvelle connexion",
+            text: "Connexion de votre compte etudiant" + process.env.EMAIL_USER
+        });
         res.send({
             status: "OK",
-            token,
             role: user.role
         });
 
@@ -131,7 +137,7 @@ router.post("/login", loginLimiter, async (req, res) => {
 });
 
 // VERIFY
-router.post("/verify", async(req, res) => {
+router.post("/verify", async (req, res) => {
     const { email, code } = req.body;
 
     const data = codes[email];
@@ -148,26 +154,34 @@ router.post("/verify", async(req, res) => {
     if (data.code !== code) {
         return res.status(400).json({ message: "Code incorrect ❌" });
     }
-   
+
 
     const token = jwt.sign({ email }, SECRET, { expiresIn: "1h" });
 
-     await transporter.sendMail({
-                from: '"StudyHub" <' + process.env.EMAIL_USER + '>',
-                to: email,
-                subject: "Nouvelle connexion",
-                text: "Connexion de votre compte admin " + process.env.EMAIL_USER
-            });
+    await transporter.sendMail({
+        from: '"StudyHub" <' + process.env.EMAIL_USER + '>',
+        to: email,
+        subject: "Nouvelle connexion",
+        text: "Connexion de votre compte admin " + process.env.EMAIL_USER
+    });
     delete codes[email];
+    res.cookie("token", token, {
+    httpOnly: true,
+    secure: false,
+    sameSite: "lax",
+    maxAge: 60 * 60 * 1000,
+    path: "/"
+});
 
-    res.json({ status: "OK", token });
+    res.json({ status: "OK" });
 });
 
 router.get("/verify-token", verifyToken, (req, res) => {
-    res.json({ ok: true, user: req.user });
+    res.json({ ok: true, user: req.user,k:cookies.token });
 });
 
 router.post("/logout", (req, res) => {
+    res.clearCookie("token");
     res.json({ message: "Logged out" });
 });
 
@@ -219,8 +233,8 @@ router.post("/verify-reset-code", (req, res) => {
 });
 
 router.post("/reset-password", async (req, res) => {
-    const { email,newPassword } = req.body;
-    
+    const { email, newPassword } = req.body;
+
     const hashedPassword = await bcrypt.hash(newPassword, 10);
 
     await User.updateOne(

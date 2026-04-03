@@ -3,13 +3,12 @@ const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 
 function verifyToken(req, res, next) {
-    const authHeader = req.headers["authorization"];
+    const token = req.cookies.token;
+    console.log("Cookies reçus :", req.cookies);
 
-    if (!authHeader) {
+    if (!token) {
         return res.status(403).send("Accès refusé");
     }
-
-    const token = authHeader.split(" ")[1];
 
     jwt.verify(token, SECRET, (err, decoded) => {
         if (err) {
