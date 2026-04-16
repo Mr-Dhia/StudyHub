@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>StudyHub · Mon profil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+<!-- HEADER (identique au dashboard) -->
+<header>
+    <a href="dashboard.html" class="logo-link">
+        <div class="logo">Study<span>Hub</span></div>
+    </a>
+    <div class="header-right">
+        <div class="user-pill" id="headerUserPill">
+            <div class="avatar" id="headerAvatar"></div>
+            <span class="user-name" id="headerUserName"></span>
+            <span class="user-role" id="headerUserRole"></span>
+        </div>
+        <span id="logoutBtn" class="logout-link">Déconnexion →</span>
+    </div>
+</header>
+
+<main>
+    <!-- Bannière de bienvenue -->
+    <div class="greeting">
+        <div class="greeting-tag">Mon espace</div>
+        <h1>Profil <em>StudyHub</em></h1>
+        <p>Gérez vos informations personnelles et votre sécurité.</p>
+    </div>
+
+    <div class="profile-container">
+        <!-- SECTION 1 : EN-TÊTE AVATAR + ACTIONS -->
+        <div class="profile-header-card">
+            <div class="avatar-large" id="profileLargeAvatar">
+                <span id="avatarInitial"></span>
+            </div>
+            <div class="profile-header-info">
+                <h2 id="profileFullName"></h2>
+                <p id="profileEmail"></p>
+                <div class="class-badge-container">
+                    <span class="class-badge" id="profileClassBadge">Classe:</span>
+                    <button class="btn-icon" id="editClassBtn"><i class="fas fa-pencil-alt"></i> Modifier classe</button>
+                </div>
+            </div>
+            <button class="btn-photo" id="changePhotoBtn"><i class="fas fa-camera"></i> Changer la photo</button>
+        </div>
+
+        <!-- SECTION 2 : INFORMATIONS PERSONNELLES (lecture seule, bien organisées) -->
+        <div class="info-section">
+            <h3 class="section-title"><i class="fas fa-user-circle"></i> Informations personnelles</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-label"><i class="fas fa-user"></i> Nom</div>
+                    <div class="info-value" id="displayLastName">Dupont</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label"><i class="fas fa-envelope"></i> Email</div>
+                    <div class="info-value" id="displayEmail">jean.dupont@gmail.com</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label"><i class="fas fa-graduation-cap"></i> Classe / Filière</div>
+                    <div class="info-value" id="displayClass">esiClasse</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3 : SÉCURITÉ (CHANGEMENT DE MOT DE PASSE) -->
+        <div class="security-section">
+            <h3 class="section-title"><i class="fas fa-shield-alt"></i> Sécurité du compte</h3>
+            <div class="security-form">
+                <div class="form-group">
+                    <label>Ancien mot de passe <span class="required">*</span></label>
+                    <input type="password" id="oldPassword" placeholder="Mot de passe actuel" autocomplete="current-password">
+                </div>
+                <div class="form-group">
+                    <label>Nouveau mot de passe</label>
+                    <input type="password" id="newPassword" placeholder="Nouveau mot de passe" autocomplete="new-password">
+                    <div class="password-strength">
+                        <span class="strength-text" id="strengthText">Force</span>
+                        <div class="strength-meter">
+                            <div class="strength-fill" id="strengthFill"></div>
+                        </div>
+                        <span id="erreur"></span>
+                    </div>
+                    <div class="password-hint">Min. 8 caractères, une majuscule, un chiffre et un symbole.</div>
+                </div>
+                <button class="btn-change-pwd" id="changePasswordBtn"><i class="fas fa-key"></i> Changer le mot de passe</button>
+            </div>
+        </div>
+
+        <!-- PETIT RAPPEL (footer de la carte) -->
+        <div class="profile-footer-note" id="welcomeMessage">
+            <i class="fas fa-smile-wink"></i> Bienvenue, Jean Dupont — votre classe esiClasse
+        </div>
+    </div>
+
+    <!-- Bandeau fonctionnalités (identique dashboard) -->
+    <div class="feature-banner">
+        <i class="fas fa-share-alt"></i>
+        <span>Accédez facilement aux anciens examens, TD, TP et partagez vos documents selon votre filière.</span>
+    </div>
+</main>
+
+<footer>
+    © 2026 StudyHub &nbsp;·&nbsp; Plateforme de partage académique
+</footer>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="js/profile.js"></script>
+</body>
+</html>

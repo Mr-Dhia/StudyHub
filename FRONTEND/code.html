@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - StudyHub</title>
+    <link rel="stylesheet" href="css/code.css">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">StudyHub</h1>
+    <nav class="bar">
+        <a href="index.html">Accueil</a>
+        <a href="connexion.html" class="moi">Connexion</a>
+        <a href="inscription.html">Inscription</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="form-box">
+        <h2>Code envoyé</h2>
+
+        <form id="myform">
+            <div class="input-box">
+                <input type="text" maxlength="6" pattern="[0-9]{6}" id="code" placeholder=" " required>
+                <label for="code">saisissez le code recu par email</label>
+            </div>
+
+            <span id="erreur"></span>
+
+            <button type="submit" class="btn">Envoyer</button>
+           
+
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="js/code.js"></script>
+</html>
